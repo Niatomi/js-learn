@@ -29,5 +29,7 @@ console.log(Math.random());
 
 //Функция - получение рандомного числа в диапозоне
 function getRandomBetween(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.round(Math.random() * (max - min) + min);
 }
+
+console.log(getRandomBetween(10, 42));
