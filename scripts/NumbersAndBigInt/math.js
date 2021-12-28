@@ -26,3 +26,8 @@ console.log(Math.trunc(4.6)); //4
 
 //Рандом также как в Java
 console.log(Math.random());
+
+//Функция - получение рандомного числа в диапозоне
+function getRandomBetween(min, max) {
+  return Math.random() * (max - min) + min;
+}
