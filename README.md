@@ -1,5 +1,3 @@
 # JavaScript Learn
 
-## Tasks:
-
-Just a copy of MDN Js
+Just a own copy of MDN Js
