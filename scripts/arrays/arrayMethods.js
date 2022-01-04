@@ -32,3 +32,16 @@ const index = people.findIndex(function (person) {
   return person.budget === 3500;
 });
 console.log(people[index]);
+
+//С помощью анонимных метдов
+const anonimIndex = people.find((person) => person.budget === 3500);
+
+//Имеется ли в массиве такая переменная
+//type of boolean
+const hasContain = cars.includes("BMW");
+
+//Метод reduce
+const allBudget = people.reduce(function (acc, person) {
+  acc += person.budget;
+  return acc;
+}, 0);
