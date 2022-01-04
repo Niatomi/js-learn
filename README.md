@@ -1,3 +1,7 @@
-# JavaScript Learn
+# WebPack learn
 
-Basics of JavaScript
+This repository contains examples of using:
+
+- HTML
+- CSS
+- JavaScript
