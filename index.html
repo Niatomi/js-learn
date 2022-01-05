@@ -5,127 +5,183 @@
   <head>
     <meta charset="UTF-8" />
     <title>Niatomi's CV</title>
+    <link rel="stylesheet" href="styles\styles.css" />
   </head>
   <!-- Main block -->
   <body>
-    <table cellspacing="20">
-      <tr>
-        <td>
-          <!-- Alt for if src is not giving image  -->
-          <img
-            src="https://avatars.githubusercontent.com/u/91119996?v=4"
-            width="200"
-            alt="images\cat-profile-photo.jpg"
-          />
-        </td>
-        <td>
+    <div class="container">
+      <div class="info">
+        <!-- Alt for if src is not giving image  -->
+        <img
+          src="https://avatars.githubusercontent.com/u/91119996?v=4"
+          alt="images\cat-profile-photo.jpg"
+          class="profile-photo"
+        />
+        <div class="info-text">
           <h1>Niatomi</h1>
           <!-- <i> is like <em> but deprecated -->
-          <p><em>Java and js programmer</em></p>
-          <p>Play guitar and <strong>prog</strong></p>
-        </td>
-      </tr>
-    </table>
+          <p>Java and js programmer</p>
+          <p>
+            Play guitar and
+            <!-- <strong> makes text bold -->
+            <!-- <strong> -->
+            prog
+            <!-- </strong> -->
+          </p>
 
-    <hr />
+          <h4>Links:</h4>
+          <a href="https://vk.com/niatomi" target="_blank">VK</a>
+          |
+          <a href="https://github.com/niatomi">Github</a>
+        </div>
+      </div>
 
-    <h2>Links:</h2>
-    <!-- Unnoded list -->
-    <!-- First type of list -->
-    <ul>
-      <!-- List item -->
-      <!-- target blank is opening link in new tab -->
-      <li><a href="https://vk.com/niatomi" target="_blank">VK</a></li>
-      <li><a href="https://github.com/niatomi">Github</a></li>
-    </ul>
+      <div class="card bg-red">
+        <h2>Hobbies:</h2>
+        <!-- Second type -->
+        <!-- Ordered list -->
+        <ol class="list">
+          <li>Playing guitar</li>
+          <li>Watch anime</li>
+        </ol>
+      </div>
 
-    <hr />
+      <div class="card bg-yellow">
+        <h2>List of projects:</h2>
+        <ul class="links-list">
+          <li>
+            <a
+              href="https://github.com/Niatomi/random-numbers-generators"
+              target="_blank"
+            >
+              random-numbers-generators
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Niatomi/name-shorter-show"
+              target="_blank"
+              >name-shorter-show</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/Niatomi/car-csv-data" target="_blank"
+              >car-csv-data</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Niatomi/different-string-types"
+              target="_blank"
+              >different-string-types</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Niatomi/hibernate-project"
+              target="_blank"
+              >hibernate-project</a
+            >
+          </li>
+        </ul>
+      </div>
 
-    <h2>Hobbies:</h2>
-    <!-- Second type -->
-    <!-- Ordered list -->
-    <ol>
-      <li>Playing guitar</li>
-      <li>Watch anime</li>
-    </ol>
+      <div class="card bg-green">
+        <!-- Table -->
+        <h2>EW:</h2>
+        <table class="table">
+          <!-- thead, tbody and tfoot is for structure of table -->
+          <thead>
+            <!-- Table row -->
+            <tr>
+              <!-- Table header -->
+              <th>Company</th>
+              <th>Position</th>
+              <th>Years</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Table data or colums  -->
+              <td>STDV</td>
+              <td>Software Engineer</td>
+              <td>2018-2019</td>
+            </tr>
+            <tr>
+              <td>TAMK</td>
+              <td>Tester</td>
+              <td>2019-2020</td>
+            </tr>
+            <tr>
+              <td>TAMK</td>
+              <td>Tester</td>
+              <td>2019-2020</td>
+            </tr>
+            <tr>
+              <td>TAMK</td>
+              <td>Tester</td>
+              <td>2019-2020</td>
+            </tr>
+            <tr>
+              <td>TAMK</td>
+              <td>Tester</td>
+              <td>2019-2020</td>
+            </tr>
+            <tr>
+              <td>TAMK</td>
+              <td>Tester</td>
+              <td>2019-2020</td>
+            </tr>
+            <tr>
+              <td>TAMK</td>
+              <td>Tester</td>
+              <td>2019-2020</td>
+            </tr>
+          </tbody>
+          <!-- <tfoot>
+          <td>Company</td>
+          <td>Position</td>
+          <td>Years</td>
+        </tfoot> -->
+        </table>
+      </div>
 
-    <hr />
+      <div class="card bg-red">
+        <div class="contact">
+          <h1>Subscribe on git update</h1>
+          <form>
+            <div class="row">
+              <div class="form-group">
+                <label for="name">Your email:</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="youremail@yourserver.me"
+                />
+              </div>
 
-    <h2>List of projects:</h2>
-    <h3><a href="listOfProjects.html">Link to projects</a></h3>
+              <div class="form-group">
+                <label for="email">Secondary email:</label>
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="youremail@yourserver.me"
+                />
+              </div>
+            </div>
 
-    <hr />
+            <div class="form-group">
+              <label for="text">Wishes:</label>
+              <textarea id="text" cols="30" rows="10"></textarea>
+            </div>
 
-    <!-- Table -->
-    <h2>EW:</h2>
-    <table>
-      <!-- thead, tbody and tfoot is for structure of table -->
-      <thead>
-        <!-- Table row -->
-        <tr>
-          <!-- Table header -->
-          <th>Company</th>
-          <th>Position</th>
-          <th>Years</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <!-- Table data or colums  -->
-          <td>STDV</td>
-          <td>Software Engineer</td>
-          <td>2018-2019</td>
-        </tr>
-        <tr>
-          <td>TAMK</td>
-          <td>Tester</td>
-          <td>2019-2020</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <td>Company</td>
-        <td>Position</td>
-        <td>Years</td>
-      </tfoot>
-    </table>
-
-    <hr />
-
-    <h1>Subscribe on git update</h1>
-
-    <form>
-      <table cellspacing="0">
-        <tr>
-          <td><label for="name">Your email:</label></td>
-          <td>
-            <input
-              type="text"
-              id="name"
-              placeholder="youremail@yourserver.me"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td><label for="email">Secondary email:</label></td>
-          <td>
-            <input
-              type="text"
-              id="email"
-              placeholder="youremail@yourserver.me"
-            />
-          </td>
-        </tr>
-      </table>
-
-      <label for="text">Wishes:</label>
-      <br />
-      <textarea id="text" cols="30" rows="10"></textarea>
-
-      <br />
-
-      <input type="submit" value="Send" />
-    </form>
-
-    <hr />
+            <input class="button-submit" type="submit" value="Send" />
+          </form>
+        </div>
+      </div>
+      <div class="position">
+        <div class="box"></div>
+      </div>
+    </div>
   </body>
 </html>
