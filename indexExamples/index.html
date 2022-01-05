@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- Format of file -->
+<html lang="en">
+  <!-- Additional info about file -->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Niatomi's CV</title>
+    <link rel="stylesheet" href="styles\styles.css" />
+  </head>
+  <!-- Main block -->
+  <body>
+    <div class="container">
+      <div class="info">
+        <!-- Alt for if src is not giving image  -->
+        <img
+          src="https://avatars.githubusercontent.com/u/91119996?v=4"
+          alt="images\cat-profile-photo.jpg"
+          class="profile-photo"
+        />
+        <h1>Niatomi</h1>
+        <!-- <i> is like <em> but deprecated -->
+        <p>Java and js programmer</p>
+        <p>
+          Play guitar and
+          <!-- <strong> makes text bold -->
+          <!-- <strong> -->
+          prog
+          <!-- </strong> -->
+        </p>
+
+        <h2>Links:</h2>
+        <!-- Unnoded list -->
+        <!-- First type of list -->
+        <ul>
+          <!-- List item -->
+          <!-- target blank is opening link in new tab -->
+          <li><a href="https://vk.com/niatomi" target="_blank">VK</a></li>
+          <li><a href="https://github.com/niatomi">Github</a></li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <h2>Hobbies:</h2>
+      <!-- Second type -->
+      <!-- Ordered list -->
+      <ol>
+        <li>Playing guitar</li>
+        <li>Watch anime</li>
+      </ol>
+
+      <hr />
+
+      <h2>List of projects:</h2>
+      <h3><a href="listOfProjects.html">Link to projects</a></h3>
+
+      <hr />
+
+      <!-- Table -->
+      <h2>EW:</h2>
+      <table>
+        <!-- thead, tbody and tfoot is for structure of table -->
+        <thead>
+          <!-- Table row -->
+          <tr>
+            <!-- Table header -->
+            <th>Company</th>
+            <th>Position</th>
+            <th>Years</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- Table data or colums  -->
+            <td>STDV</td>
+            <td>Software Engineer</td>
+            <td>2018-2019</td>
+          </tr>
+          <tr>
+            <td>TAMK</td>
+            <td>Tester</td>
+            <td>2019-2020</td>
+          </tr>
+        </tbody>
+        <!-- <tfoot>
+          <td>Company</td>
+          <td>Position</td>
+          <td>Years</td>
+        </tfoot> -->
+      </table>
+
+      <hr />
+
+      <h1>Subscribe on git update</h1>
+
+      <form>
+        <table cellspacing="0">
+          <tr>
+            <td><label for="name">Your email:</label></td>
+            <td>
+              <input
+                type="text"
+                id="name"
+                placeholder="youremail@yourserver.me"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Secondary email:</label></td>
+            <td>
+              <input
+                type="text"
+                id="email"
+                placeholder="youremail@yourserver.me"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <label for="text">Wishes:</label>
+        <br />
+        <textarea id="text" cols="30" rows="10"></textarea>
+
+        <br />
+
+        <input type="submit" value="Send" />
+      </form>
+
+      <hr />
+    </div>
+  </body>
+</html>

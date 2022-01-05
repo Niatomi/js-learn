@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: #f1f1f1;
+  color: #0f141e;
+
+  /* font-size: 16px;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif; */
+
+  /* Запись выше идентична написанной выше */
+  font: normal 16px "Roboto", sans-serif;
+}
+
+/* class может повторятся - .название_класса */
+/* id должен быть уникальным - #название_id */
+.profile-photo {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 1px -1px 20px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* При использовании символа ">" 
+стиль применяется только для детей в блоке div */
+.info p {
+  color: #86898f;
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 5px; */
+  /* word-spacing: 2px; */
+}
+
+.container {
+  max-width: 75%;
+  margin: auto;
+}
+
+.links {
+  background: green;
+  padding: 15px;
+  border: 5px solid red;
+  margin: 20px;
+}
+
+/* Учёт бордера */
+/* .boxes > div {
+  float: left;
+  background: black;
+  height: 200px;
+  border: 4px solid red;
+  width: 25%;
+  По стандарту ghb учёте размера бокса
+  не учитывается граница, вот этот параметр
+  позваляет выставлять объекты с учётом этой границы 
+  box-sizing: border-box;
+} 
+*/
