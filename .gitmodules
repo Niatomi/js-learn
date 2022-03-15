@@ -1,0 +1,6 @@
+[submodule "matrix-screen-saver"]
+	path = matrix-screen-saver
+	url = https://github.com/Niatomi/matrix-screen-saver.git
+[submodule "html-practice"]
+	path = html-practice
+	url = https://github.com/Niatomi/html-practice.git
