@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Counter from "./component/Counter";
+import PostItem from "./component/PostItem";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let [value, setValue] = useState('Текст');
+
+
+
+    return (
+        <div className="App">
+        <PostItem/>
+        <PostItem/>
+        <PostItem/>
+        <PostItem/>
+        </div>
+    );
 }
 
 export default App;
