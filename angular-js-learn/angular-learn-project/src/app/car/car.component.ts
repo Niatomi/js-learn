@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  styleUrls: ['./car.component.css'],
 })
-export class CarComponent implements OnInit {
+export class CarComponent {
+  carName = 'Ford';
+  carYear: number = 2000;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getName() {
+    return this.carName;
   }
-
 }
