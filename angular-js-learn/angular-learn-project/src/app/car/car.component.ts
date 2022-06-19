@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css'],
 })
 export class CarComponent {
-  carName = 'Ford';
-  carYear: number = 2000;
+  carName = 'Car name';
+  carYear: number = 1999;
 
   getName() {
     return this.carName;
