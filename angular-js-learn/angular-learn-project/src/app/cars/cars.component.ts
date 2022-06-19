@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars.component.css'],
 })
 export class CarsComponent {
-  canAddCar = false;
-  constructor() {
-    setTimeout(() => {
-      this.canAddCar = !this.canAddCar;
-    }, 4000);
+  carName = '';
+  inputText = 'Default text';
+  addCarStatus = false;
+
+  addCar() {
+    this.addCarStatus = true;
   }
+
+  constructor() {}
 }
