@@ -1,5 +1,17 @@
-<button [disabled]="!canAddCar" class="btn btn-primary">Добавить машину</button>
+<input type="text" class="form-control" [(ngModel)]="carName" />
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<div *ngIf="addCarStatus"></div>
+
+<ng-container *ngIf="addCarStatus; else elseTemplate">
+  <p>Машина добавлена!</p>
+</ng-container>
+<ng-template #elseTemplate>
+  <p>Машина не добавлена!</p>
+</ng-template>
+
+<p></p>
 <hr />
 <app-car></app-car>
 <app-car></app-car>
 <app-car></app-car>
+<hr />
