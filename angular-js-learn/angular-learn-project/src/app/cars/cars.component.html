@@ -4,6 +4,14 @@
   class="form-control"
   [(ngModel)]="carName"
 />
+
+<input
+  type="text"
+  placeholder="Год производства"
+  class="form-control"
+  [(ngModel)]="carYear"
+/>
+
 <button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
 <div *ngIf="addCarStatus"></div>
 
@@ -14,13 +22,9 @@
   <p>Добавьте машину</p>
 </ng-template>
 
-<ul>
-  <li *ngFor="let date of dates; let index = index">
-    <div>
-      <b>{{ index + 1 }}</b> - {{ date | uppercase }}
-    </div>
-  </li>
-</ul>
+<hr />
+
+<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
 
 <p></p>
 <hr />

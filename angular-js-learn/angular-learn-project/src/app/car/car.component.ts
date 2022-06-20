@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-car',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css'],
 })
 export class CarComponent {
-  carName = 'Car name';
-  carYear: number = 1999;
+  @Input('carItem')
+  car: { name: string; year: number } = {
+    name: '',
+    year: 2017,
+  };
 
-  getName() {
-    return this.carName;
-  }
+  constructor() {}
 }
