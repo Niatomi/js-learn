@@ -1,1 +1,25 @@
-<p>add-car works!</p>
+<hr />
+<p class="form-name">Форма добавления компонентов:</p>
+<input
+  type="text"
+  placeholder="Название машины"
+  class="form-control"
+  [(ngModel)]="carName"
+/>
+
+<input
+  type="text"
+  placeholder="Год производства"
+  class="form-control"
+  [(ngModel)]="carYear"
+/>
+
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<div *ngIf=""></div>
+
+<ng-container *ngIf="addCarStatus; else elseTemplate">
+  <p>Машина добавлена!</p>
+</ng-container>
+<ng-template #elseTemplate>
+  <p>Добавьте машину</p>
+</ng-template>

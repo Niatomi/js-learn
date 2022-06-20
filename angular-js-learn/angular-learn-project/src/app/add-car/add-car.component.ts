@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
-  styleUrls: ['./add-car.component.css']
+  styleUrls: ['./add-car.component.css'],
 })
-export class AddCarComponent implements OnInit {
+export class AddCarComponent {
+  carName = '';
+  carYear = 2000;
+  addCarStatus = false;
 
-  constructor() { }
+  @Output()
+  onAddCar = new EventEmitter<{ name: string; year: number }>();
 
-  ngOnInit(): void {
+  addCar() {
+    this.onAddCar.emit({
+      name: this.carName,
+      year: this.carYear,
+    });
+    this.carName = '';
+    this.carYear = 2000;
+    this.addCarStatus = false;
   }
 
+  constructor() {}
 }
