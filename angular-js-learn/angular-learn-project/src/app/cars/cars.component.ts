@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-cars',
@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars.component.css'],
 })
 export class CarsComponent {
-  carName = '';
-  carYear = 2000;
   addCarStatus = false;
   cars: { name: string; year: number }[] = [
     {
@@ -32,27 +30,9 @@ export class CarsComponent {
     },
   ];
 
-  dates = [
-    new Date(2015, 3, 4).toDateString(),
-    new Date(2004, 1, 2).toDateString(),
-    new Date(2000, 4, 5).toDateString(),
-    new Date(2016, 7, 6).toDateString(),
-  ];
-
-  addCar() {
-    this.addCarStatus = true;
-    let car: { name: string; year: number } = {
-      name: this.carName,
-      year: this.carYear,
-    };
-    this.cars.push(car);
-    this.carName = '';
-    this.carYear = 2000;
-
-    setTimeout(() => {
-      this.addCarStatus = false;
-    }, 1000);
-  }
-
   constructor() {}
+
+  updateCarList(car: { name: string; year: number }) {
+    this.cars.push(car);
+  }
 }
