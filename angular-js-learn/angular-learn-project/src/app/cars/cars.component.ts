@@ -10,6 +10,12 @@ export class CarsComponent {
   inputText = 'Default text';
   addCarStatus = false;
   cars = ['Audi', 'Volga', 'Land Rover', 'BMW', 'Bentley', 'UAZ'];
+  dates = [
+    new Date(2015, 3, 4).toDateString(),
+    new Date(2004, 1, 2).toDateString(),
+    new Date(2000, 4, 5).toDateString(),
+    new Date(2016, 7, 6).toDateString(),
+  ];
 
   addCar() {
     this.addCarStatus = true;
@@ -19,10 +25,6 @@ export class CarsComponent {
     setTimeout(() => {
       this.addCarStatus = false;
     }, 1000);
-  }
-
-  setBigText(car: string) {
-    return car.length > 4 ? true : false;
   }
 
   constructor() {}
