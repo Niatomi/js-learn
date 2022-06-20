@@ -15,15 +15,9 @@
 </ng-template>
 
 <ul>
-  <li *ngFor="let car of cars; let index = index">
-    <div
-      [ngStyle]="{
-        backgroundColor: (index + 1) % 2 === 0 ? 'red' : 'green',
-        color: 'white'
-      }"
-      [ngClass]="{ 'big-text': setBigText(car) }"
-    >
-      <b>{{ index + 1 }}</b> - {{ car }}
+  <li *ngFor="let date of dates; let index = index">
+    <div>
+      <b>{{ index + 1 }}</b> - {{ date | uppercase }}
     </div>
   </li>
 </ul>
