@@ -1,4 +1,11 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
   selector: '[appBackground]',
@@ -6,13 +13,21 @@ import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 export class backgroundDirective implements OnInit {
   constructor(private element: ElementRef, private renderer: Renderer2) {}
 
-  ngOnInit(): void {
-    this.renderer.setStyle(
-      this.element.nativeElement,
-      'background-color',
-      'red'
-    );
-    this.renderer.addClass(this.element.nativeElement, 'white-text');
+  @HostBinding('class')
+  usingStyle: string = 'mouse-unhover';
+
+  ngOnInit(): void {}
+
+  @HostListener('mouseenter')
+  onMouseEnter() {
+    this;
+    this.usingStyle = 'mouse-hover';
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    this.usingStyle = 'mouse-unhover';
+    // this.renderer.addClass(this.element.nativeElement, 'white-text');
     // this.element.nativeElement.style.backgroundColor = 'red';
   }
 }
