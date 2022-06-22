@@ -2,6 +2,12 @@
   margin-top: 2rem;
 }
 
-.white-text {
+.mouse-hover {
+  background-color: yellow;
+  color: black;
+}
+
+.mouse-unhover {
+  background-color: blue;
   color: white;
 }
