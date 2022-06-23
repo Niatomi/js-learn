@@ -1,5 +1,31 @@
-<div class="container">
-  <div class="col-xs-8 col-xs-offset-2">
-    <h3 appBackground>{{ headerText }}</h3>
+<div class="container w-100 h-100 p-3 mx-auto flex-column">
+  <div class="row">
+    <div class="row-xs-12">
+      <h3
+        [appBackground]="'gray'"
+        [defaultColor]="'white'"
+        style="background-color: transparent"
+      >
+        {{ headerText }}
+      </h3>
+
+      <ul class="list-group">
+        <li
+          *ngFor="let item of items"
+          (click)="onClick(item)"
+          hoverBackground
+          class="list-group-item"
+        >
+          {{ item }}
+        </li>
+      </ul>
+
+      <div [ngSwitch]="currentValue">
+        <p *ngSwitchCase="1">Вы выбрали 1</p>
+        <p *ngSwitchCase="2">Вы выбрали 2</p>
+        <p *ngSwitchCase="3">Вы выбрали 3</p>
+        <p *ngSwitchDefault>Чёт впдалу считать, соре</p>
+      </div>
+    </div>
   </div>
 </div>
