@@ -36,6 +36,8 @@ import { Component } from '@angular/core';
         <h2>
           <pre>{{ object | json }}</pre>
         </h2>
+
+        <h2>{{ object.nested.xyz | customPipe: 2:1 }}</h2>
       </div>
     </div>
   `,
