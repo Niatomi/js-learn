@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+    <div class="container">
+      <div class="row-xs-12">
         <!-- <h2>{{ name }}</h2>
         <h2>{{ name | lowercase }}</h2>
         <h2>{{ name | uppercase }}</h2>
@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
         <h2>{{ money | currency: 'UAH':true }}</h2>
         <h2>{{ money | currency: 'EUR' }}</h2>
         <h2>{{ money | currency: 'RUB':true }}</h2> -->
-        <hr />
+        <!-- <hr />
         <h2>{{ date }}</h2>
         <h2>{{ date | date }}</h2>
         <h2>{{ date | date: 'YYYY' }}</h2>
@@ -38,6 +38,8 @@ import { Component } from '@angular/core';
         </h2>
 
         <h2>{{ object.nested.xyz | customPipe: 2:1 }}</h2>
+      </div> -->
+        <app-filter-pipe></app-filter-pipe>
       </div>
     </div>
   `,
