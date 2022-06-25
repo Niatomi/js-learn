@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+import 'rxjs';
+import { from, Observable, delay, of } from 'rxjs';
+
 @Component({
   selector: 'app-filter-pipe',
   template: `
+    <h2>{{ asyncTitle | async }}</h2>
+
     <hr />
     <input type="text" class="form-control" [(ngModel)]="searchCar" />
     <hr />
@@ -36,6 +41,8 @@ export class FilterPipeComponent implements OnInit {
     { name: 'BMW', desc: 'Abobus' },
     { name: 'Lamborgini', desc: 'A' },
   ];
+
+  asyncTitle: any = of('Async title 3 seconds').pipe(delay(3000));
 
   addCar() {
     this.cars.push({
