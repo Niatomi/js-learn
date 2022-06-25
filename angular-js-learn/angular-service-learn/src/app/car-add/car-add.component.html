@@ -1,1 +1,8 @@
-<p>car-add works!</p>
+<input
+  type="text"
+  placeholder="Год производства"
+  class="form-control"
+  [(ngModel)]="carName"
+/>
+
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
