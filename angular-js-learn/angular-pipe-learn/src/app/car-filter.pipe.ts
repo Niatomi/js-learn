@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'carFilter',
+  pure: false,
 })
 export class CarFilterPipe implements PipeTransform {
   transform(
@@ -11,10 +12,11 @@ export class CarFilterPipe implements PipeTransform {
   ): { name: string; desc: string }[] {
     if (carList.length === 0 || searchCar === '') return carList;
 
-    return carList.filter((car) =>
-      (car as any)[fieldName]
-        .toLowerCase()
-        .startsWith(searchCar.toLocaleLowerCase())
+    return carList.filter(
+      (car) =>
+        (car as any)[fieldName]
+          .toLowerCase()
+          .indexOf(searchCar.toLocaleLowerCase()) !== -1
     );
   }
 }
