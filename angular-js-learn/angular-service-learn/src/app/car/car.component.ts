@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ConsoleService } from '../console.service';
 
 @Component({
   selector: 'app-car',
@@ -12,6 +13,8 @@ export class CarComponent implements OnInit {
     isSold: false,
   };
 
+  constructor(private consoleService: ConsoleService = new ConsoleService()) {}
+
   getClass() {
     return {
       'list-group-item-success': !this.car.isSold,
@@ -22,9 +25,8 @@ export class CarComponent implements OnInit {
 
   onAction(type: string) {
     this.car.isSold = type === 'buy' ? true : false;
+    this.consoleService.log('abobaJS');
   }
-
-  constructor() {}
 
   ngOnInit(): void {}
 }
