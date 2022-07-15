@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,12 @@ export class AppComponent {
     { type: 'yes', text: 'Да' },
     { type: 'no', text: 'Нет' },
   ];
+
+  defaultAnswer: string = 'yes';
+  defaultCountry: string = 'ua';
+
+  submitForm(form: NgForm) {
+    console.log(form);
+    form.reset();
+  }
 }
