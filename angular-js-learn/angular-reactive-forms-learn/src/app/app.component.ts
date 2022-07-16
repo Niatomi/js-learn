@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,37 +7,35 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @ViewChild('form') form!: NgForm;
+  form = new FormGroup({
+    user: new FormGroup({
+      email: new FormControl('', [Validators.email, Validators.required]),
+      password: new FormControl('', [Validators.required, this.checkForLength]),
+    }),
+    country: new FormControl('ua'),
+    answer: new FormControl('no'),
+  });
+
+  get password() {
+    return this.form.get('user.password');
+  }
+
+  checkForLength(control: FormControl) {
+    if (control.value.length <= 4) {
+      return {
+        lengthError: true,
+      };
+    } else {
+      return null;
+    }
+  }
 
   answers = [
     { type: 'yes', text: 'Да' },
     { type: 'no', text: 'Нет' },
   ];
 
-  defaultAnswer: string = 'yes';
-  defaultCountry: string = 'ua';
-
-  submitForm(form: NgForm) {
-    this.isSubmited = true;
-    this.formData = this.form.value;
-    this.form.reset();
-  }
-
-  formData = {};
-  isSubmited = false;
-
-  addRandomEmail() {
-    const randEmail = 'wfpk@pifam.fef';
-    // this.form.setValue({
-    //   user: {
-    //     email: randEmail,
-    //     password: '',
-    //   },
-    //   country: '',
-    //   answer: '',
-    // });
-    this.form.form.patchValue({
-      user: { email: randEmail },
-    });
+  onSubmit() {
+    console.log(this.form);
   }
 }
