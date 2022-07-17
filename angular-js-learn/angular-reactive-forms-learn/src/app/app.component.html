@@ -9,25 +9,27 @@
           class="form-control"
           formControlName="email"
           [ngClass]="{
-            'has-error':
-              form.get('user.email')?.invalid && form.get('user.email')?.touched
+            'has-error': email?.invalid && email?.touched
           }"
         />
         <div
           *ngIf="
-            form.get('user.email')?.hasError('email') &&
-            form.get('user.email')?.touched
+          email?.errors?.['email'] &&
+          email?.touched
           "
         >
           Невалидный email
         </div>
         <div
           *ngIf="
-            form.get('user.email')?.invalid && form.get('user.email')?.touched
+          email?.errors?.['required'] && email?.touched
           "
         >
           Email не может быть пустым
         </div>
+        <span *ngIf="email?.errors?.['emailIsUsed']"
+          >Email уже используется<br
+        /></span>
       </div>
       <div class="form-group">
         <label>Пароль</label>
@@ -51,7 +53,7 @@
             >Пароль не должен быть пустым <br
           /></span>
           <span *ngIf="password?.errors?.['lengthError']"
-            >Пароль должен быть больше 4 символов</span
+            >Пароль должен быть больше чем {{ charsCount }} символов</span
           >
         </div>
       </div>
