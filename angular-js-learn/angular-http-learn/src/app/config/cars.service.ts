@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 
 export interface Car {
@@ -17,10 +21,12 @@ export class CarsService {
   }
 
   addCar(car: Car): Observable<any> {
-    const headers = { 'content-type': 'application/json' };
-    const body = JSON.stringify(car);
-    console.log(body);
-    return this.http.post<Car>(this.baseURL, body, { headers: headers });
+    const headers = new HttpHeaders().set(
+      'content-type',
+      'application/json; charset=utf-8'
+    );
+
+    return this.http.post<Car>(this.baseURL, car, { headers });
   }
 
   getCar(id: number): Observable<any> {
