@@ -3,17 +3,17 @@
     {
       "id": 1,
       "name": "Ford",
-      "color": "white"
+      "color": "yellow"
     },
     {
       "id": 2,
       "name": "Toyota",
-      "color": "black"
+      "color": "green"
     },
     {
       "id": 3,
       "name": "Yellow",
-      "color": "green"
+      "color": "blue"
     }
   ]
 }
