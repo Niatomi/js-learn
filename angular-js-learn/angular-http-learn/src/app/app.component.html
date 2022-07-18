@@ -1,9 +1,33 @@
 <div class="col-xs-8 col-xs-offset-2">
+  <h4>Добавьте свою машину</h4>
+  <label for="addCarName">Название:</label>
+  <input type="text" [(ngModel)]="addCarName" class="form-control" />
+  <label for="addCarColor">Цвет:</label>
+  <input type="text" class="form-control" [(ngModel)]="addCarColor" />
+  <hr />
+  <button class="btn btn-success" (click)="submitCar()">Добавить машину</button>
   <button class="btn btn-primary" (click)="getCars()">Загрузить машины</button>
   <hr />
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let car of cars">
-      <span class="badge">{{ car.id }}</span> {{ car.name }} ({{ car.color }})
+      <span class="badge" [ngStyle]="{ background: car.color }">{{
+        car.id
+      }}</span>
+      {{ car.name }}
+      <button
+        class="btn btn-xs btn-info"
+        styles="item-align: right"
+        (click)="setNewColor(car.id)"
+      >
+        Изменить цвет
+      </button>
+      <button
+        class="btn btn-xs btn-info"
+        styles="item-align: right"
+        (click)="deleteCar(car.id)"
+      >
+        Удалить
+      </button>
     </li>
   </ul>
 </div>
