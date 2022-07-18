@@ -22,9 +22,9 @@ export class AppComponent implements OnInit {
 
   cars: Car[] = [];
 
-  setNewColor(id: number) {
-    this.cars[id - 1].color = this.getRandomColor();
-    this.carSerive.changeColor(this.cars[id - 1]).subscribe(() => {});
+  setNewColor(car: Car) {
+    car.color = this.getRandomColor();
+    this.carSerive.changeColor(car).subscribe(() => {});
   }
 
   getRandomColor() {

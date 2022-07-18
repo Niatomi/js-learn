@@ -16,14 +16,14 @@
       {{ car.name }}
       <button
         class="btn btn-xs btn-info"
-        styles="item-align: right"
-        (click)="setNewColor(car.id)"
+        styles="align-items: flex-end"
+        (click)="setNewColor(car)"
       >
         Изменить цвет
       </button>
       <button
         class="btn btn-xs btn-info"
-        styles="item-align: right"
+        styles="align-items: flex-end"
         (click)="deleteCar(car.id)"
       >
         Удалить
