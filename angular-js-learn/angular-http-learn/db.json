@@ -15,5 +15,8 @@
       "name": "Yellow",
       "color": "blue"
     }
-  ]
+  ],
+  "title": {
+    "value": "Менеджер автомобилей"
+  }
 }
