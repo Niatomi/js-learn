@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Car, CarsService } from './config/cars.service';
 import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -14,17 +16,22 @@ export class AppComponent implements OnInit {
   addCarName = '';
   addCarColor: string = '';
 
-  constructor(private carSerive: CarsService) {}
+  serverError = '';
 
+  constructor(private carService: CarsService) {}
+
+  appTitle: string = '';
   ngOnInit(): void {
-    // this.carSerive.getCars().subscribe((cars) => (this.cars = cars));
+    this.carService
+      .getAppTitle()
+      .subscribe((title) => (this.appTitle = title.value));
   }
 
   cars: Car[] = [];
 
   setNewColor(car: Car) {
     car.color = this.getRandomColor();
-    this.carSerive.changeColor(car).subscribe(() => {});
+    this.carService.changeColor(car).subscribe(() => {});
   }
 
   getRandomColor() {
@@ -33,24 +40,33 @@ export class AppComponent implements OnInit {
   }
 
   deleteCar(id: number) {
-    this.carSerive.deleteCar(id).subscribe(() => {
+    this.carService.deleteCar(id).subscribe(() => {
       this.getCars();
     });
   }
 
   getCars() {
-    this.carSerive.getCars().subscribe((cars: Car[]) => (this.cars = cars));
+    this.carService.getCars().subscribe({
+      next: (cars: Car[]) => (this.cars = cars),
+      error: (error) => {
+        this.serverError = error.message;
+        console.log(this.serverError);
+      },
+    });
   }
 
   submitCar() {
-    this.carSerive
+    this.carService
       .addCar({
         id: 0,
         name: this.addCarName,
         color: this.addCarColor,
       })
-      .subscribe((car) => {
-        this.cars.push(car);
+      .subscribe({
+        next: (car) => this.cars.push(car),
+        error: (error) => {
+          alert(error);
+        },
       });
   }
 }
