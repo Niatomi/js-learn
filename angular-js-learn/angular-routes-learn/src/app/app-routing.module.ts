@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './auth-guard.service';
 import { CarPageComponent } from './car-page/car-page.component';
 import { CarsPageComponent } from './cars-page/cars-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: ':id', component: CarPageComponent },
       { path: ':id/:name', component: CarPageComponent },
     ],
+    canActivate: [AuthGuardService],
   },
   { path: '', component: HomePageComponent },
   { path: 'not-found', component: NotFoundComponent },

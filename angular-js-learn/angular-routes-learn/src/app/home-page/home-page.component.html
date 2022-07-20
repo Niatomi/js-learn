@@ -21,4 +21,19 @@
   >
     Перейти на страницу машин
   </button>
+  <hr />
+  <button
+    (click)="changeStatus('login')"
+    type="button"
+    class="btn btn-success btn-rounded"
+  >
+    Войти в систему
+  </button>
+  <button
+    (click)="changeStatus('logoff')"
+    type="button"
+    class="btn btn-danger btn-rounded"
+  >
+    Выйти из системы
+  </button>
 </section>
