@@ -23,7 +23,6 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CarsModule,
     SharedModule,
   ],
   providers: [],
