@@ -9,7 +9,7 @@ import { Car, CarsServiceService } from '../cars-service.service';
 })
 export class CarPageComponent implements OnInit {
   id: string = '';
-  carById: any;
+  carById: Car = this.service.getCarById(1);
   carByName: any;
   name: string = '';
 
@@ -25,6 +25,7 @@ export class CarPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+
     this.name = this.route.snapshot.params['name'];
 
     this.color = this.route.snapshot.queryParams['color'];
@@ -36,7 +37,7 @@ export class CarPageComponent implements OnInit {
 
     this.route.params.subscribe((params: Params) => {
       this.id = params['id'];
-      this.name = params['name'];
+      this.carById = this.service.getCarById(parseInt(this.id));
     });
 
     this.route.queryParams.subscribe((params: Params) => {
