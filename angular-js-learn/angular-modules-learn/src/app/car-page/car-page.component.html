@@ -1,0 +1,23 @@
+<h3>Информация о автомобиле {{ carById.name }} при помощи id автомобиля</h3>
+<hr />
+<h3>
+  Информация о автомобиле {{ carByName.name }} при помощи имени автомобиля
+</h3>
+<hr />
+<section class="text-center">
+  <button
+    (click)="getBackToHomePage()"
+    type="button"
+    class="btn btn-info btn-rounded"
+  >
+    Перейти на страницу машин
+  </button>
+</section>
+<hr />
+<h3>Данные из querry параметров</h3>
+<h4>
+  Цвет машины:
+  <span [ngStyle]="{ 'background-color': color }">{{ color }}</span>
+</h4>
+<h4>Год производства: {{ year }}</h4>
+<p>Hash {{ hash }}</p>
