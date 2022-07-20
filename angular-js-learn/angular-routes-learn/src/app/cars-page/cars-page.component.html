@@ -1,16 +1,29 @@
+<div class="text-center">
+  <h2>Страница машин</h2>
+</div>
 <hr />
-<ul class="list-group">
-  <li *ngFor="let car of cars">
-    <div class="list-group-item">
-      <a
-        class="col-md-6"
-        style="text-decoration: none"
-        [routerLink]="['/cars', car.id, car.name]"
-        [queryParams]="{ year: car.year, color: car.color }"
-        fragment="pic"
-      >
-        {{ car.name }}
-      </a>
-    </div>
-  </li>
-</ul>
+
+<button routerLink="/cars" type="button" class="btn btn-primary btn-rounded">
+  Обновить страницу
+</button>
+
+<hr />
+<div class="row">
+  <div class="col-xs-4">
+    <ul class="list-group">
+      <li *ngFor="let car of cars">
+        <div class="list-group-item">
+          <a
+            style="text-decoration: none"
+            [routerLink]="['/cars', car.id, car.name]"
+            [queryParams]="{ year: car.year, color: car.color }"
+            fragment="pic"
+          >
+            {{ car.name }}
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-8"><router-outlet></router-outlet></div>
+</div>
