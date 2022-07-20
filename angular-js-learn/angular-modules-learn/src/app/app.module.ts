@@ -7,16 +7,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ColorDirective } from './shared/color.directive';
 import { HeaderComponent } from './header/header.component';
 import { CarsModule } from './cars-page/car.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NotFoundComponent,
-    ColorDirective,
     HeaderComponent,
   ],
   imports: [
@@ -25,6 +24,7 @@ import { CarsModule } from './cars-page/car.module';
     HttpClientModule,
     FormsModule,
     CarsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
