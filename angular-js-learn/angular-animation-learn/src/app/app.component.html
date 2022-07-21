@@ -1,5 +1,24 @@
-<div
+<!-- <div
   (mousedown)="clickedDivState = 'active'"
   [@clickedDiv]="clickedDivState"
   (click)="changeDivState()"
+></div> -->
+
+<!--
+<div
+  (click)="multiState = multiState === 'start' ? 'end' : 'start'"
+  [@multi]="multiState"
+></div> -->
+
+<button class="btn btn-primary" (click)="isVisible = !isVisible">
+  Переключить
+</button>
+<hr />
+<!-- <div class="alert alert-danger" *ngIf="isVisible" @divTrigger>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</div>
+<hr /> -->
+<div
+  style="height: 250px; width: 200px; background-color: red"
+  [@changeWidth]="isVisible ? 'a' : 'b'"
 ></div>
