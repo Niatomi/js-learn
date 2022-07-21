@@ -4,6 +4,8 @@ import {
   style,
   transition,
   animate,
+  group,
+  keyframes,
 } from '@angular/animations';
 
 export const divTrigger = trigger('divTrigger', [
@@ -37,5 +39,43 @@ export const changeWidthTrigger = trigger('changeWidth', [
         height: '*',
       })
     ),
+  ]),
+]);
+
+export const detailedTrigger = trigger('detailedDivivTrigger', [
+  // void => *
+  transition(':enter', [
+    style({
+      width: '*',
+      height: '*',
+    }),
+    group([
+      animate(
+        3000,
+        style({
+          width: '200px',
+          height: '200px',
+        })
+      ),
+      animate(
+        6000,
+        keyframes([
+          style({ backgroundColor: 'yellow' }),
+          style({ backgroundColor: 'red' }),
+          style({ backgroundColor: 'green' }),
+          style({ backgroundColor: 'pink' }),
+        ])
+      ),
+    ]),
+    animate(1000),
+  ]),
+  // * => void
+  transition(':leave', [
+    style({
+      width: '*',
+      height: '*',
+      backgroundColor: '*',
+    }),
+    animate(500, style({})),
   ]),
 ]);
