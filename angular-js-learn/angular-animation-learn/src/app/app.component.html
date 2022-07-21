@@ -18,7 +18,15 @@
   Lorem ipsum dolor sit amet consectetur adipisicing elit.
 </div>
 <hr /> -->
-<div
+<!-- <div
   style="height: 250px; width: 200px; background-color: red"
   [@changeWidth]="isVisible ? 'a' : 'b'"
-></div>
+></div> -->
+<div
+  class="alert alert-danger"
+  *ngIf="isVisible"
+  (@detailedDivivTrigger.start)="onAnimationStart($event)"
+  (@detailedDivivTrigger.done)="onAnimationDone($event)"
+>
+  Lorem ipsum
+</div>

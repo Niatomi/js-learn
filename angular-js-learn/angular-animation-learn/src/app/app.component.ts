@@ -7,7 +7,11 @@ import {
 } from '@angular/animations';
 import { Component } from '@angular/core';
 import { timeout } from 'rxjs';
-import { changeWidthTrigger, divTrigger } from './app.animations';
+import {
+  changeWidthTrigger,
+  detailedTrigger,
+  divTrigger,
+} from './app.animations';
 
 @Component({
   selector: 'app-root',
@@ -62,6 +66,7 @@ import { changeWidthTrigger, divTrigger } from './app.animations';
     ]),
     divTrigger,
     changeWidthTrigger,
+    detailedTrigger,
   ],
 })
 export class AppComponent {
@@ -75,5 +80,14 @@ export class AppComponent {
     setTimeout(() => {
       this.clickedDivState = 'start';
     }, 3000);
+  }
+
+  onAnimationStart(event: any) {
+    console.log(event);
+    console.log(typeof event);
+  }
+
+  onAnimationDone(event: any) {
+    console.log(event);
   }
 }
