@@ -1,4 +1,6 @@
 <template>
+  <AddTodo/>
+  <hr/>
   <h1>Todo list</h1>
   <TodoList
     v-bind:todos="todos"
@@ -8,6 +10,7 @@
 
 <script>
 import TodoList from "@/components/TodoList.vue"
+import AddTodo from "@/components/AddTodo.vue"
 export default {
   name: 'App',
   data() {
@@ -27,7 +30,8 @@ export default {
     }
   },
   components: {
-    TodoList
+    TodoList,
+    AddTodo
   }
 }
 </script>
